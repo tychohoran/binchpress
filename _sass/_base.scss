@@ -2,14 +2,10 @@
  * Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr, a,
-dl, dd, ol, ul, figure, 
-section, main, article, header, footer {
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 
@@ -18,9 +14,6 @@ section, main, article, header, footer {
  * Basic styling
  */
 body {
-    width: 100%;
-    height: 100%;
-    position: absolute;
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     background-color: $background-color;
@@ -29,20 +22,7 @@ body {
     -moz-font-feature-settings: "kern" 1;
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
-    -webkit-font-kerning:normal;
     font-kerning: normal;
-    text-rendering:optimizeLegibility;
-    -webkit-font-variant-ligatures:common-ligatures;
-    font-variant-ligatures:common-ligatures;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-}
-
-body, html {
-    height: 100%;
-    overflow: hidden;
 }
 
 
@@ -111,13 +91,16 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $accent-color;
+    color: $brand-color;
     text-decoration: none;
-    display: inline-block;
-    transition: transform 0.25s;
+
+    &:visited {
+        color: darken($brand-color, 15%);
+    }
 
     &:hover {
-        transform: translateY(-5px);
+        color: $text-color;
+        text-decoration: underline;
     }
 }
 
@@ -166,6 +149,29 @@ pre {
         padding-left: 0;
     }
 }
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
 
 
 /**

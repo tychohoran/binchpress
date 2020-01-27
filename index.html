@@ -1,71 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Binch Press</title>
-    <meta name="description" content="A print and ceramics cooperative in Central Falls, RI">
-    <link rel="icon" href="BinchFavicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-<div id="wrapper">
-    <nav id="nav">
-        <a class="nav_link selected" id="nav_about" href="#about">About</a>
-        <a class="nav_link" id="nav_programs" href="#programs">Programs</a>
-        <a class="nav_link" id="nav_contact" href="#contact">Contact</a>
-        <a class="nav_link" id="nav_donate" href="https://www.gofundme.com/binchpress" target="_blank">Donate</a>
-    </nav>
-    <div id="pages" onscroll="nav()">
-        <div class="page" id="about"><img id="logo" src="Binch Logo.svg" alt="Binch Press Logo">
-<div id="mission_text" class="editable">
-<h1>Mission</h1>
-Binch Press works to create a supportive informal working and learning space. We are a cooperative of queer/trans folks and POC who share a printshop and ceramics studio in Central Falls, Rhode Island. We work to center artists whose identities intersect with multiple axes of marginalization, including class, disability, mental illness, race, age, religion, immigration status, indigeneity, gender/sexuality, carceral history, and experiences of violence/trauma. Binch Press strives to challenge the barriers to access put up by traditional art institutions and exclusive artists collectives alike.<br><br>131 Clay St. #211 Central Falls, RI</div>
-<div class="img_wrap"><img id="baloons" src="balloons_1200w.png" srcset="balloons_750w.png 750w, balloons_1200w.png 1200w, balloons_1920w.png 1920w" alt="Baloons"></div></div>
-        <div class="page" id="programs"><a id="register" class="button" href="register" target="_blank" rel="noopener noreferrer">Register Here</a><a class="button" href="programming" target="_blank" rel="noopener noreferrer" id="descriptions">Descriptions</a> <img class="cal" src="April_800.png" srcset="April_400.png 400w,April_800.png 800w,April_1200.png 1200w,April_1600.png 1600w" alt="April Calendar"><img class="cal" src="May_800.png" srcset="May_400.png 400w,May_800.png 800w,May_1200.png 1200w,May_1600.png 1600w" alt="May Calendar"></div>
-        <div class="page" id="contact"><a class="button" href="https://www.instagram.com/binch_press/" target="_blank" rel="noopener noreferrer">Instagram</a> <a class="button" href="mailto:binchpressllc@gmail.com">Email</a></div>
-        <div class="page" id="donate"><a id="gofundme" class="button" href="https://www.gofundme.com/binchpress" target="_blank" rel="noopener noreferrer">Donate</a></div>
-    </div>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>
-<div id="gradient_overlay"></div>
-<div id="color_overlay"></div>
-<video class="bg_video" muted preload="metadata" loop autoplay playsinline>
-<source src="Binch_Ceramics Room.mp4" type="video/mp4">
-<source src="Binch_Ceramics Room.webm" type="video/webm">
-<source src="Binch_Ceramics Room.ogv" type="video/ogg">
-</video>
-<script>
-window.onload = function() {
-    nav();
-    window.addEventListener("resize", nav());
-}
-function nav() {
-        var navs = document.getElementsByClassName('nav_link');
-        for(var i=0; i < navs.length; i++){
-            var tempnav = navs.item(i);
-            var pageid = tempnav.id.replace('nav_','');
-            var page = document.getElementById(pageid);
-            var pagearea = visibleArea(page);
-												tempnav.classList.remove('selected');
-            if(pagearea >= 0.5){
-																tempnav.classList.add('selected');
-            }
-        }
-    }
-function visibleArea(el) {
-        var rect = el.getBoundingClientRect();
-        var top = Math.min(Math.max(parseInt(rect.top), 0), window.innerHeight);
-        var bottom = Math.min(Math.max(parseInt(rect.bottom), 0), window.innerHeight);
-        var left = Math.min(Math.max(parseInt(rect.left), 0), window.innerWidth);
-        var right = Math.min(Math.max(parseInt(rect.right), 0), window.innerWidth);
-        var pageArea= window.innerHeight * window.innerWidth;
-        var visibleHeight = Math.abs(bottom-top);
-        var visibleWidth = Math.abs(left-right);
-        var visibleArea = visibleHeight*visibleWidth;
-        console.log(visibleArea/pageArea);
-        return (visibleArea/pageArea);
-    }
-</script>
-</body>
-</html>
