@@ -2,38 +2,66 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
 
-    // Positioning context for the mobile navigation icon
-    position: relative;
+    // Fix the position of the navigation bar
+    position: fixed;
+    background-color: $text-color;
+    color: $background-color;
+
+    // Position 
+    left:0;
+    height: 100%;
+    width: 240px;
+
+    // Smooth transitions
+    @include prefix(transition, height 0.25s, webkit moz o);
+
+    // Smooth transitions
+    @include media-query($on-palm) {
+        width: 100%;
+        height: 60px;
+    }
 }
 
 .site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
+    svg {
+        max-height: 2 * $spacing-unit;
+        padding-top: $spacing-unit;
+        @include prefix(transition, 0.25s, webkit moz o);
+        path {
+            fill: $background-color;
+        }
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
+        @include media-query($on-palm) {
+            max-height: $spacing-unit;
+            padding-top: $spacing-unit/2;
+        }
+    }
+}
+
+.clicked {
+    height: 100%;
+
+    .menu-icon {
+        #middlebar {
+            @include prefix(transform, scaleX(0), webkit moz ms o);
+        }
+        #topbar {
+            @include prefix(transform, translate(-8%,-8%) rotate(33.69deg), webkit moz ms o);
+        }
+        #bottombar {
+            @include prefix(transform, translate(-8%,8%) rotate(-33.69deg), webkit moz ms o);
+        }
     }
 }
 
 .site-nav {
-    float: right;
-    line-height: 56px;
 
     .menu-icon {
         display: none;
     }
 
     .page-link {
-        color: $text-color;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the last one
@@ -44,29 +72,31 @@
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
+        top: 0;
         right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
         text-align: right;
 
         .menu-icon {
             display: block;
             float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
+            width: 30px;
+            height: 20px;
+            padding-top: 20px;
             text-align: center;
 
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
+            svg {
+                rect {
+                    @include prefix(transition, 0.25s, webkit moz o);
                 }
+                #topbar, #bottombar{
+                    @include prefix(transform-origin, left center, webkit moz ms o);
+                }
+                #middlebar{
+                    @include prefix(transform-origin, center center, webkit moz ms o);
+                }
+                width: auto;
+                height: 100%;
+                fill: $background-color;
             }
         }
 
@@ -98,7 +128,6 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
 }
 
@@ -139,19 +168,6 @@
 .footer-col-3 {
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
     width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
 }
 
 @include media-query($on-palm) {
@@ -207,10 +223,6 @@
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
 }
 
 .post-content {
@@ -218,25 +230,13 @@
 
     h2 {
         font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
     }
 
     h3 {
         font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
     }
 
     h4 {
         font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
     }
 }
