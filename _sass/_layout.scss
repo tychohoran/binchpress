@@ -1,3 +1,4 @@
+
 /**
  * Site header
  */
@@ -8,15 +9,15 @@
     background-color: $text-color;
     color: $background-color;
 
-    // Position 
-    left:0;
+    // Position navigation bar along the left side of the screen
+    left: 0;
     height: 100%;
-    width: 240px;
+    width: $menu-width;
 
     // Smooth transitions
     @include prefix(transition, height 0.25s, webkit moz o);
 
-    // Smooth transitions
+    // Position navigation bar along the top on mobile
     @include media-query($on-palm) {
         width: 100%;
         height: 60px;
@@ -39,22 +40,6 @@
     }
 }
 
-.clicked {
-    height: 100%;
-
-    .menu-icon {
-        #middlebar {
-            @include prefix(transform, scaleX(0), webkit moz ms o);
-        }
-        #topbar {
-            @include prefix(transform, translate(-8%,-8%) rotate(33.69deg), webkit moz ms o);
-        }
-        #bottombar {
-            @include prefix(transform, translate(-8%,8%) rotate(-33.69deg), webkit moz ms o);
-        }
-    }
-}
-
 .site-nav {
 
     .menu-icon {
@@ -62,12 +47,17 @@
     }
 
     .page-link {
+        font-family: $header-font-family;
+        font-size: $header-font-size;
         line-height: $base-line-height;
+        font-variation-settings: 'wdth'0;
+        color: white;
+    }
 
-        // Gaps between nav items, but not on the last one
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
+    .trigger {
+        @include value-prefix(display, flex, webkit moz ms);
+        @include prefix(flex-flow, column nowrap, webkit moz ms);
+        @include prefix(justify-content, flex-start, webkit moz ms);
     }
 
     @include media-query($on-palm) {
@@ -75,6 +65,7 @@
         top: 0;
         right: $spacing-unit / 2;
         text-align: right;
+        width: calc(100% - #{$spacing-unit});
 
         .menu-icon {
             display: block;
@@ -84,6 +75,7 @@
             padding-top: 20px;
             text-align: center;
 
+            // Set up menu icon animation
             svg {
                 rect {
                     @include prefix(transition, 0.25s, webkit moz o);
@@ -100,29 +92,36 @@
             }
         }
 
+        // Invisible until clicked
+
         .trigger {
             clear: both;
             display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
-            margin-left: 20px;
+            text-align: left;
         }
     }
 }
 
+.clicked {
+    height: 100%;
 
+    // Menu icon animation on clicked
+    .menu-icon {
+        #middlebar {
+            @include prefix(transform, scaleX(0), webkit moz ms o);
+        }
+        #topbar {
+            @include prefix(transform, translate(-8%,-8%) rotate(33.69deg), webkit moz ms o);
+        }
+        #bottombar {
+            @include prefix(transform, translate(-8%,8%) rotate(-33.69deg), webkit moz ms o);
+        }
+    }
+
+    .trigger {
+        @include value-prefix(display, flex, webkit moz ms);
+    }
+}
 
 /**
  * Site footer
@@ -185,6 +184,8 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    width: calc(100% - #{$menu-width});
+    right: 0;
 }
 
 .page-heading {
