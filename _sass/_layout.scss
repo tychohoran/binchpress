@@ -48,14 +48,15 @@
     }
 
     .page-link {
-        font-family: $header-font-family;
-        font-size: $header-font-size;
-        line-height: $base-line-height;
-        font-variation-settings: 'wdth'0;
+        font-size: $header-font-size - 9px;
+        line-height: 2 * $spacing-unit;
+        text-transform: uppercase;
         color: white;
+        letter-spacing: 0.5px;
     }
 
     .trigger {
+        padding-top: $spacing-unit;
         @include value-prefix(display, flex, webkit moz ms);
         @include prefix(flex-flow, column nowrap, webkit moz ms);
         @include prefix(justify-content, flex-start, webkit moz ms);
@@ -198,7 +199,8 @@
 }
 
 .page-heading {
-    font-size: 20px;
+    font-family: $header-font-family;
+    font-size: $header-font-size;
 }
 
 .post-list {
@@ -234,11 +236,12 @@
  */
 .post-header {
     margin-bottom: $spacing-unit;
+    font-family: $header-font-family;
+    font-variation-settings: 'wdth'100;
 }
 
 .post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
+    font-size: 2 * $header-font-size;
     line-height: 1;
 }
 
