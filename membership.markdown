@@ -1,7 +1,7 @@
 ---
 title: Membership
 permalink: "/membership/"
-position: 3
+position: 1
 layout: page
 ---
 
