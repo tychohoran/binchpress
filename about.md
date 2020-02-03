@@ -2,14 +2,20 @@
 title: About
 permalink: "/about/"
 position: 0
-Hours:
-  Monday: Closed
-  Tuesday: 7:30 - 9:30PM (Clay Night)
-  Wednesday: Closed
-  Thursday: 6 - 10PM (Print Night)
-  Friday: Closed
-  Saturday: 12 - 6PM (Open Studio)
   Sunday: 12 - 4PM (Open Studio)
+More Info:
+  Hours Text: |-
+    Monday: Closed
+    Tuesday: 7:30 - 9:30PM (Clay Night)
+    Wednesday: Closed
+    Thursday: 6 - 10PM (Print Night)
+    Friday: Closed
+    Saturday: 12 - 6PM (Open Studio)
+    Sunday: 12 - 4PM (Open Studio)
+  Contact Text: "[binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)"
+  Contact Description: 
+  Key: 
+Field name: 
 layout: about
 ---
 
