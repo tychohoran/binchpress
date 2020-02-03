@@ -12,14 +12,12 @@ layout: default
   	<section>
   		{{ content }}
   	</section>
-  	<section class="hours">
-  		<h1 class="page-heading">Hours</h1>
-  		{% for day in page['Hours'] %}
-    		<span class="hours-day">{{ day[0] }}:</span>
-    		<span class="hours-times">{{ day[1] }}</span>
-    		<br>
-    	{% endfor %}
-  	</section>
+  	{% for info in page['More Info'] %}
+    	<section class="more-info">
+  			<h1 class="page-heading">{{info[0] | remove:" Text"}}</h1>
+  			<p>{{info[1] | markdownify | newline_to_br }}</p>
+  		</section>
+    {% endfor %}
   </div>
 
 </article>
