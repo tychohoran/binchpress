@@ -1,6 +1,6 @@
 ---
 title: Calendar
-permalink: "/calendar/"
+permalink: "/Calendar/"
 position: 3
 layout: page
 ---

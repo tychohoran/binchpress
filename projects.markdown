@@ -1,6 +1,5 @@
 ---
 title: Projects
-permalink: "/projects/"
-position: 4
-layout: page
+date: 2020-02-03 18:54:00 Z
 ---
+
