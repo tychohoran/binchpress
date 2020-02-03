@@ -13,11 +13,16 @@
     // Position navigation bar along the left side of the screen
     left: 0;
     height: 100%;
-    width: $menu-width;
+    width: $menu-width + $spacing-unit;
 
     // Smooth transitions
-    @include prefix(transition, height 0.25s, webkit moz o);
-
+    @include prefix(transition, 0.25s, webkit moz o);
+    @include media-query($on-laptop) {
+        width: $menu-width;
+    }
+    @include media-query(800px) {
+        @include prefix(transition, none, webkit moz o);
+    }
     // Position navigation bar along the top on mobile
     @include media-query($on-palm) {
         width: 100%;
@@ -29,7 +34,6 @@
     svg {
         max-height: 2 * $spacing-unit;
         padding-top: $spacing-unit;
-        @include prefix(transition, 0.25s, webkit moz o);
         path {
             fill: $background-color;
         }
@@ -194,8 +198,17 @@
 .page-content {
     position: relative;
     padding: $spacing-unit 0;
-    width: calc(100% - #{$menu-width});
-    left: $menu-width;
+    width: calc(100% - (#{$menu-width} + #{$spacing-unit}));
+    left: $menu-width + $spacing-unit;
+    @include prefix(transition, 0.25s, webkit moz o);
+
+    @include media-query($on-laptop){
+        width: calc(100% - #{$menu-width});
+        left: $menu-width;
+    }
+    @include media-query(800px) {
+        @include prefix(transition, none, webkit moz o);
+    }
 }
 
 .page-heading {
