@@ -13,8 +13,6 @@ More Info:
     Saturday: 12 - 6PM (Open Studio)
     Sunday: 12 - 4PM (Open Studio)
   Contact Text: "[binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)"
-  Contact Description: 
-  Key: 
 Field name: 
 layout: about
 ---
