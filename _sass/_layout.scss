@@ -28,6 +28,9 @@
         width: 100%;
         height: 2 * $spacing-unit;
     }
+    @include media-query($on-palm - 10) {
+        @include prefix(transition, 0.25s, webkit moz o);
+    }
 }
 
 .site-title {
