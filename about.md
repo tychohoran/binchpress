@@ -11,7 +11,9 @@ More Info:
     Friday: Closed
     Saturday: 12 - 6PM (Open Studio)
     Sunday: 12 - 4PM (Open Studio)
-  Contact Text: "[binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)"
+  Contact Text: |-
+    [binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)
+    131 Clay St #211 Central Falls, RI 02863
 layout: about
 ---
 
