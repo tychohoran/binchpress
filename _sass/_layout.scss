@@ -212,6 +212,10 @@
     @include media-query(800px) {
         @include prefix(transition, none, webkit moz o);
     }
+
+    section {
+        margin-bottom: (3/2) * $spacing-unit;
+    }
 }
 
 .page-heading {
@@ -287,4 +291,14 @@
     h4 {
         font-size: 20px;
     }
+}
+
+/**
+ * Hours
+ */
+
+.hours-day {
+    display: inline-block;
+    min-width: 100px;
+    font-weight: 900;
 }

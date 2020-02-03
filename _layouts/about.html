@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content">
+  	<section>
+  		{{ content }}
+  	</section>
+  	<section class="hours">
+  		<h1 class="page-heading">Hours</h1>
+  		{% for day in page['Hours'] %}
+    		<span class="hours-day">{{ day[0] }}:</span>
+    		<span class="hours-times">{{ day[1] }}</span>
+    		<br>
+    	{% endfor %}
+  	</section>
+  </div>
+
+</article>
