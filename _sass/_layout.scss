@@ -301,18 +301,14 @@
     section {
         @include prefix(flex, 1, webkit moz ms);
     }
-}
 
-/**
- * More Info
- */
-
-.more-info {
-    border-bottom: 1 solid;
-    margin-left: (3/2) * $spacing-unit;
-    max-width: 315px;
-    div:not(:last-child) {
-        border-bottom: solid 2px;
-        margin-bottom: $spacing-unit;
+    .more-info {
+        border-bottom: 1 solid;
+        margin-left: (3/2) * $spacing-unit;
+        max-width: 360px;
+        div:not(:last-child) {
+            border-bottom: solid 2px;
+            margin-bottom: $spacing-unit;
+        }
     }
 }
