@@ -261,6 +261,9 @@
 
 .post-title {
     font-size: 2 * $header-font-size;
+}
+
+.post-title, .page-heading {
     line-height: 1;
     font-variation-settings: 'wdth'100;
     @include prefix(transition, font-variation-settings 0.5s, webkit moz o);
@@ -278,6 +281,9 @@
 }
 
 .post-content {
+    @include value-prefix(display, flex, webkit moz ms);
+    @include prefix(flex-flow, row wrap, webkit moz ms);
+    @include prefix(justify-content, space-between, webkit moz ms);
     margin-bottom: $spacing-unit;
 
     h2 {
@@ -291,14 +297,22 @@
     h4 {
         font-size: 20px;
     }
+
+    section {
+        @include prefix(flex, 1, webkit moz ms);
+    }
 }
 
 /**
- * Hours
+ * More Info
  */
 
-.hours-day {
-    display: inline-block;
-    min-width: 100px;
-    font-weight: 900;
+.more-info {
+    border-bottom: 1 solid;
+    margin-left: (3/2) * $spacing-unit;
+    max-width: 315px;
+    div:not(:last-child) {
+        border-bottom: solid 2px;
+        margin-bottom: $spacing-unit;
+    }
 }

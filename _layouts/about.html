@@ -12,12 +12,14 @@ layout: default
   	<section>
   		{{ content }}
   	</section>
+  	<section class="more-info">
   	{% for info in page['More Info'] %}
-    	<section class="more-info">
+    	<div class="{{info[0] | remove:' Text'}}">
   			<h1 class="page-heading">{{info[0] | remove:" Text"}}</h1>
-  			<p>{{info[1] | markdownify | newline_to_br }}</p>
-  		</section>
+  			{{ info[1] | markdownify | newline_to_br | strip_newlines }}
+  		</div>
     {% endfor %}
+    </section>
   </div>
 
 </article>
