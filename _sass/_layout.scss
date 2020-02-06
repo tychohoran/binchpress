@@ -214,7 +214,7 @@
     }
 
     section {
-        margin-bottom: (3/2) * $spacing-unit;
+        margin-bottom: $spacing-unit;
     }
 }
 
@@ -267,8 +267,10 @@
     line-height: 1;
     font-variation-settings: 'wdth'100;
     @include prefix(transition, font-variation-settings 0.5s, webkit moz o);
-
-    @include media-query($on-laptop) {
+    @include media-query(900px) {
+        font-variation-settings: 'wdth'60;
+    }
+    @include media-query(800px) {
         font-variation-settings: 'wdth'20;
     }
     @include media-query($on-palm) {
@@ -300,15 +302,67 @@
 
     section {
         @include prefix(flex, 1, webkit moz ms);
+
+        @include media-query(1200px) {
+            @include prefix(flex, 1 0 100%, webkit moz ms);
+        }
     }
 
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        @include prefix(hyphens, auto, webkit moz);
+    }
+    p.post-paragraph:not(:first-child){
+        margin-top: $spacing-unit;
+    }
+    p.post-paragraph:not(:last-child){
+        margin-bottom: $spacing-unit;
+    }
     .more-info {
-        border-bottom: 1 solid;
+        @include value-prefix(display, flex, webkit moz ms);
+        @include prefix(flex-flow, row wrap, webkit moz ms);
+        @include prefix(justify-content, flex-start, webkit moz ms);
+        @include prefix(align-content, flex-start, webkit moz ms);
         margin-left: (3/2) * $spacing-unit;
         max-width: 330px;
         div:not(:last-child) {
             border-bottom: solid 2px;
             margin-bottom: $spacing-unit;
+            padding-bottom: $spacing-unit;
+        }
+        .page-heading {
+            margin-bottom: $base-font-size;
+        }
+        div {
+            @include prefix(flex, 1, webkit moz ms);
+        }
+        @include media-query(1200px) {
+            margin-left: 0;
+            max-width: 100%;
+            div:not(:last-child) {
+                border-bottom: none;
+                border-right: solid 2px;
+                margin-right: $spacing-unit;
+                padding-right: $spacing-unit;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+        @include media-query(950px) {
+            div {
+                @include prefix(flex, 1 0 100%, webkit moz ms);
+                border-top: solid 2px;
+                padding-top: $spacing-unit;
+            }
+            div:not(:last-child) {
+                border-right: none;
+                margin-right: 0;
+                padding-right: 0;
+            }
+            div:not(:first-child) {
+                margin-top: $spacing-unit;
+            }
         }
     }
 }
