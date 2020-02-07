@@ -3,7 +3,8 @@ title: Membership
 permalink: "/membership/"
 position: 1
 More Info:
-  Sign Up Text: Test
+  Sign Up Text: This will be a link to the member sign up form.
+  Member Portal Text: This will be the member portal.
 Member Tiers:
   Drop-In Member:
     Price: "$10 - 20 / hour"
