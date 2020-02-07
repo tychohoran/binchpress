@@ -2,6 +2,8 @@
 title: Membership
 permalink: "/membership/"
 position: 1
+More Info:
+  Sign Up Text: 
 Member Tiers:
   Drop-In Member:
     Price: "$10 - 20 / hour"
