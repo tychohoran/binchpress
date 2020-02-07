@@ -5,3 +5,4 @@ position: 3
 layout: page
 ---
 
+{% include calendar.html %}
