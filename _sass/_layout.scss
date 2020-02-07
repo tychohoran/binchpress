@@ -335,9 +335,12 @@
             margin-bottom: $base-font-size;
         }
         div {
-            @include prefix(flex, 1, webkit moz ms);
+            @include prefix(flex, 1 0 100%, webkit moz ms);
         }
         @include media-query(1200px) {
+            div{
+                @include prefix(flex, 1, webkit moz ms);
+            }
             margin-left: 0;
             max-width: 100%;
             div:not(:last-child) {
