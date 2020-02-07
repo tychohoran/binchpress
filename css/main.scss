@@ -17,8 +17,10 @@ $header-font-size: 36px;
 
 $spacing-unit:     30px;
 
-$text-color:       {{site['First Color']}};
-$background-color: #fff;
+$text-color:       {{site['Text Color']}};
+$background-color: {{site['Background Color']}};
+$accent-color-1: {{site['Accent 1 Color']}};
+$accent-color-2: {{site['Accent 2 Color']}};
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;

@@ -366,3 +366,16 @@
         }
     }
 }
+.member-tiers {
+    .member-perks {
+        width: 20%;
+    }
+    .drop-in-member {
+        width: 40%;
+        background-color: scale-color($accent-color-1, $lightness: 70%);
+    }
+    .monthly-member {
+        width: 40%;
+        background-color: scale-color($accent-color-2, $lightness: 70%);
+    }
+}
