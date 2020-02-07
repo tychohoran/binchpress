@@ -17,11 +17,11 @@ Member Tiers:
     Price: "$40 - 80 / month"
     Studio Access: Unlimited studio access after a month trial period and shop orientation
     Materials: Bring your own or for sale at the studio
-    Classes: "50% off"
+    Classes: 50% off
     Personal Studio Shelf: 'Yes'
     Option to Host Events / Teach Workshops: 'Yes'
-    Studio Maintenance Task: '1 shop maintenance task and 1 member meeting per month'
-    Guest Pass: '1 per month'
+    Studio Maintenance Task: 1 shop maintenance task and 1 member meeting per month
+    Guest Pass: 1 per month
 layout: page
 ---
 
