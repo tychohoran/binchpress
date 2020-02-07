@@ -111,6 +111,23 @@ a {
     }
 }
 
+/**
+ * Tables
+ */
+
+ table {
+
+    border-spacing: 0px;
+    td, th {
+        vertical-align: top;
+        text-align: left;
+        padding: $spacing-unit / 2;
+    }
+
+    td {
+        border-top: solid 2px black;
+    }
+ }
 
 
 /**
@@ -127,32 +144,6 @@ blockquote {
         margin-bottom: 0;
     }
 }
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-
-    > code {
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
 
 
 /**

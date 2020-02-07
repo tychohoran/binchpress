@@ -13,14 +13,16 @@ layout: default
   		{% assign filtered_content = content | markdownify | rstrip | strip_newlines | newline_to_br %}
       {{filtered_content | replace: "<p", "<p class='post-paragraph'" | replace: "<br", "</p><p class='post-paragraph'" }}
   	</section>
-  	<section class="more-info">
-  	{% for info in page['More Info'] %}
-    	<div class="{{info[0] | remove:' Text'}}">
-  			<h1 class="page-heading">{{info[0] | remove:" Text"}}</h1>
-  			{{ info[1] | markdownify | rstrip | newline_to_br | strip_newlines }}
-  		</div>
-    {% endfor %}
-    </section>
+    {% if page['More Info'] %}
+    	<section class="more-info">
+    	{% for info in page['More Info'] %}
+      	<div class="{{info[0] | remove:' Text'}}">
+    			<h1 class="page-heading">{{info[0] | remove:" Text"}}</h1>
+    			{{ info[1] | markdownify | rstrip | newline_to_br | strip_newlines }}
+    		</div>
+      {% endfor %}
+      </section>
+    {% endif %}
   </div>
 
 </article>
