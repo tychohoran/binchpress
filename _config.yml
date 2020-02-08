@@ -23,6 +23,7 @@ Address: '131 Clay St #211, Central Falls, RI 02863'
 baseurl: 
 url: http://binchpress.com
 markdown: kramdown
+snipcart_api_key: 
 Accent 1 Color: "#0076BF"
 Accent 2 Color: "#FF48B0"
 Accent 3  Color: "#FFE800"
