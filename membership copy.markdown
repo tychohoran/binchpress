@@ -1,5 +1,5 @@
 ---
-title: Membership
+title: Store
 permalink: "/membership/"
 position: 6
 layout: products
