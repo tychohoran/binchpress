@@ -5,6 +5,9 @@ collections:
   posts:
     title: Posts
     output: true
+  products:
+    title: Products
+    output: true
   uploads:
     title: Uploads
     output: true
@@ -15,6 +18,17 @@ defaults:
   values:
     layout: page
     More Info: 
+- scope:
+    path: ''
+    type: products
+  values:
+    layout: product
+    permalink: "/products/:title/"
+    name: ''
+    price: 0.0
+    sku: ''
+    image: ''
+    weight: 0.0
 email: binchpressllc@gmail.com
 description: Binch Press is a volunteer-run print and ceramics cooperative centering
   queer/trans artists and artists of color in Central Falls, RI (occupied Pokanoket
