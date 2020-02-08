@@ -1,6 +1,6 @@
 ---
 title: Store
-permalink: "/membership/"
+permalink: "/store/"
 position: 6
 layout: products
 ---
