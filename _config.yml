@@ -17,7 +17,7 @@ defaults:
     type: pages
   values:
     layout: page
-    More Info:
+    More Info: 
     Visible on Homepage: true
 - scope:
     path: ''
