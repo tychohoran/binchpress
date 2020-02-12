@@ -2,22 +2,22 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+{% assign sorted_pages = site.pages | sort:"position"  %}
+{% for my_page in sorted_pages %}
+  {% if my_page.title %}
+    <article class="post">
+      {% include page_header.html title=my_page.title %}
+      <div class="post-content">
+        {% include page_content.html name=my_page.name %}
+        {% assign pageinfo = my_page['More Info'] %}
+        {% if my_page['More Info'] %}
+          <section class="more-info">
+          {% for info in my_page['More Info'] %}
+            {% include page_moreinfo.html info=info %}
+          {% endfor %}
+          </section>
+        {% endif %}
+      </div>
+    </article>
+  {% endif %}
+{% endfor %}

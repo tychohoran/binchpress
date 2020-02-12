@@ -1,20 +1,20 @@
 <table class="member-tiers">
 	<colgroup>
 	    <col class="member-perks">
-	    {% for member-tier in page['Member Tiers']%}
+	    {% for member-tier in site['Member Tiers']%}
 				<col class="{{member-tier[0] | slugify}}">
 		{% endfor %}
   	</colgroup>
 	<thead>
 		<tr>
 			<th></th>
-			{% for member-tier in page['Member Tiers']%}
+			{% for member-tier in site['Member Tiers']%}
 				<th>{{member-tier[0]}}</th>
 			{% endfor %}
 		</tr>
 	</thead>
 	<tbody>
-		{% assign member-tiers = page['Member Tiers']%}
+		{% assign member-tiers = site['Member Tiers']%}
 			{% for member-perk in member-tiers['Drop-In Member']%}
 				{% assign member-row = member-perk[0] %}
 				<tr class="{{member-row | slugify}}">

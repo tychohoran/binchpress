@@ -4,22 +4,15 @@ layout: default
 
 <article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+{% include page_header.html title=page.title %}
 
   <div class="post-content">
-  	<section class="post-body">
-  		{% assign filtered_content = content | markdownify | rstrip | strip_newlines | newline_to_br %}
-      {{filtered_content | replace: "<p", "<p class='post-paragraph'" | replace: "<br", "</p><p class='post-paragraph'" }}
-  	</section>
+    {% include page_content.html name=page.name %}
+    {% assign pageinfo = page['More Info'] %}
     {% if page['More Info'] %}
-    	<section class="more-info">
-    	{% for info in page['More Info'] %}
-      	<div class="{{info[0] | remove:' Text'}}">
-    			<h1 class="page-heading">{{info[0] | remove:" Text"}}</h1>
-    			{{ info[1] | markdownify | rstrip | newline_to_br | strip_newlines }}
-    		</div>
+      <section class="more-info">
+      {% for info in page['More Info'] %}
+        {% include page_moreinfo.html info=info %}
       {% endfor %}
       </section>
     {% endif %}
