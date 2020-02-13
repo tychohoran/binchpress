@@ -199,12 +199,16 @@
  * Page content
  */
 .page-content {
-    position: relative;
-    padding: $spacing-unit 0;
+    position: absolute;
+    height: 100%;
     width: calc(100% - (#{$menu-width} + #{$spacing-unit}));
     left: $menu-width + $spacing-unit;
     @include prefix(transition, 0.25s, webkit moz o);
-
+    @include media-query(1200px){
+        section:not(:last-child) {
+            margin-bottom: 2*$spacing-unit;
+        }
+    }
     @include media-query($on-laptop){
         width: calc(100% - #{$menu-width});
         left: $menu-width;
@@ -216,6 +220,15 @@
     section {
         margin-bottom: $spacing-unit;
     }
+    @include prefix(scroll-behavior, smooth, webkit);
+    @include prefix(scroll-snap-type, proximity, ms webkit);
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+}
+
+.page-content::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
 }
 
 .page-heading {
@@ -244,8 +257,9 @@
 
 @include media-query($on-palm) {
     .page-content {
-        padding-top: 2 * $spacing-unit;
+        top: 2 * $spacing-unit;
         width: 100%;
+        height: calc(100% - (2 * #{$spacing-unit}));
         left: 0;
     }
 }
@@ -259,6 +273,8 @@
     padding-top: 2.25*$spacing-unit;
 
     @include prefix(transition, 0.25s, webkit moz o);
+    @include prefix(scroll-snap-coordinate, 0% 0%, webkit);
+    scroll-snap-align: start;
     @include media-query($on-laptop){
         padding: $spacing-unit;
         padding-top: 1.75*$spacing-unit;
@@ -266,7 +282,7 @@
 }
 
 .post:first-child{
-    padding-top: 0;
+    padding-top: $spacing-unit;
     @include media-query($on-palm){
         padding-top: $spacing-unit;
     }

@@ -4,8 +4,8 @@ layout: default
 
 {% assign sorted_pages = site.pages | sort:"position"  %}
 {% for my_page in sorted_pages %}
-  {% if my_page.title %}
-    <article class="post">
+  {% if my_page.title and my_page['Visible on Homepage'] %}
+    <article class="post" id="{{my_page.title | slugify}}">
       {% include page_header.html title=my_page.title %}
       <div class="post-content">
         {% include page_content.html name=my_page.name %}
