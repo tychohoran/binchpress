@@ -8,6 +8,9 @@ collections:
   products:
     title: Products
     output: true
+  resources:
+    title: Resources
+    output: true
   uploads:
     title: Uploads
     output: true
