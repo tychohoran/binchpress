@@ -2,7 +2,7 @@
 title: Services
 permalink: "/services/"
 position: 3
-Visible on Homepage: true
+Visible on Homepage: false
 layout: page
 ---
 
