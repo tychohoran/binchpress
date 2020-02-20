@@ -8,7 +8,7 @@
         {% include {{include_address}} %}
         {{final_split[1]}}
       {% else %}
-        {{info_chunk}}
+        {{info_chunk | replace: "<p", "<p class='moreinfo-paragraph'" | replace: "<br", "</p><p class='moreinfo-paragraph'" }}
       {% endif %}
   {% endfor %}
 </div>
