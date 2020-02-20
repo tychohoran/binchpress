@@ -3,8 +3,9 @@ title: Membership
 permalink: "/membership/"
 position: 1
 More Info:
-  Sign Up Text: Coming soon!
-  Member Portal Text: Coming soon!
+  Sign Up Text: You can now register as a Binch Press member using [this form](https://docs.google.com/forms/d/e/1FAIpQLSc4glXS01PZPy3MJOQLws1jdH-KMaGNaEBwJHBLJBgwPAEy2g/viewform).
+  Member Portal Text: After registering as a Drop-In or Monthly member, you can book
+    time in the studio using our [member booking portal](https://binchpress.as.me/schedule.php).
 Member Tiers:
   Drop-In Member:
     Price: "$10 - 20 / hour"
