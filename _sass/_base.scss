@@ -171,11 +171,11 @@ iframe {
  * Links
  */
 a {
-    color: $accent-color-1;
+    color: $accent-color-2;
     text-decoration: none;
 
     &:hover {
-        color: $accent-color-2;
+        color: $accent-color-1;
         text-decoration: underline;
     }
 }
