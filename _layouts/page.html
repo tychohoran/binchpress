@@ -12,7 +12,7 @@ layout: default
     {% if page['More Info'] %}
       <section class="more-info">
       {% for info in page['More Info'] %}
-        {% include page_moreinfo.html info=info %}
+        {% include page_moreinfo.html info=info name=page.name %}
       {% endfor %}
       </section>
     {% endif %}

@@ -1,4 +1,14 @@
 <div class="{{ include.info[0] | remove:' Text' }}">
   <h1 class="page-heading">{{ include.info[0] | remove:" Text"}}</h1>
-  {{ include.info[1] | markdownify | rstrip | newline_to_br | strip_newlines }}
+  {% assign info_content = include.info[1] | markdownify | rstrip | newline_to_br | strip_newlines | split:"{%" %}
+  {% for info_chunk in info_content %}
+      {% if info_chunk contains "include" %}
+        {% assign final_split = info_chunk | split:"}" %}
+        {% assign include_address = final_split[0] | remove_first:"include" | remove:"%" | strip %}
+        {% include {{include_address}} %}
+        {{final_split[1]}}
+      {% else %}
+        {{info_chunk}}
+      {% endif %}
+  {% endfor %}
 </div>

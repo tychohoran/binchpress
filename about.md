@@ -14,6 +14,8 @@ More Info:
   Contact Text: |-
     [binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)
     131 Clay St #211 Central Falls, RI 02863
+    
+    {% include google_map.html %}
 layout: page
 ---
 

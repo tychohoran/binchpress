@@ -161,21 +161,19 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
 
-
+iframe {
+  max-width: 100%;
+}
 
 /**
  * Links
  */
 a {
-    color: $brand-color;
+    color: $accent-color-1;
     text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
     &:hover {
-        color: $text-color;
+        color: $accent-color-2;
         text-decoration: underline;
     }
 }
