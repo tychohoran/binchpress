@@ -4,7 +4,7 @@ permalink: "/about/"
 position: 0
 More Info:
   Hours Text: |-
-    PLEASE NOTE: Due to the pandemic, we are currently open only to Monthly Members. Monthly members are encouraged to schedule time via scheduler link.
+    PLEASE NOTE: Due to the pandemic, we are only open to Monthly Members. Monthly members are encouraged to schedule time via scheduler link.
 
     Monday: Closed
     Tuesday: 7:30 - 9:30PM (Clay Night)
