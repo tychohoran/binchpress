@@ -496,7 +496,7 @@
                 box-sizing: border-box;
 
                 @include media-query(1200px){
-                    background-color: #dd2c34;
+                    background-color: #dd2c34 !important;
                     color: #fff;
                 }
 
