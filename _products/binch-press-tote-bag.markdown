@@ -5,5 +5,6 @@ name: Binch Press Tote Bag
 price: 10
 sku: TB
 image: "/uploads/NickCarterMockUp.jpg"
+weight: 1lb
 ---
 
