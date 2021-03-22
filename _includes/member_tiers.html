@@ -1,0 +1,32 @@
+<table class="member-tiers">
+	<colgroup>
+	    <col class="member-perks">
+	    {% for member-tier in site['Member Tiers']%}
+				<col class="{{member-tier[0] | slugify}}">
+		{% endfor %}
+  	</colgroup>
+	<thead>
+		<tr>
+			<th></th>
+			{% for member-tier in site['Member Tiers']%}
+				<th>{{member-tier[0]}}</th>
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+		{% assign member-tiers = site['Member Tiers']%}
+			{% for member-perk in member-tiers['Drop-In Member']%}
+				{% assign member-row = member-perk[0] %}
+				<tr class="{{member-row | slugify}}">
+					<td>{{member-row}}</td>
+					{% for member-tier in member-tiers %}
+						{% for member-item in member-tier[1] %}
+							{% if member-item[0] == member-row %}
+								<td>{{member-item[1]}}</td>
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+				</tr>
+			{% endfor %}
+	</tbody>
+</table>

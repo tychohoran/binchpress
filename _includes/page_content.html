@@ -1,0 +1,8 @@
+<section class="post-body">
+	{% capture cap_content %}
+		{% include_relative {{include.name}} %}
+	{% endcapture %}
+	{% assign split_content = cap_content | split: "---" %}
+	{% assign filtered_content = split_content[2] | markdownify | rstrip | strip_newlines | newline_to_br %}
+	{{filtered_content | replace: "<p", "<p class='post-paragraph'" | replace: "<br", "</p><p class='post-paragraph'" }}
+</section>

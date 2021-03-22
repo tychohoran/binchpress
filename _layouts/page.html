@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="post">
+
+{% include page_header.html title=page.title %}
+
+  <div class="post-content">
+    {% include page_content.html name=page.name %}
+    {% assign pageinfo = page['More Info'] %}
+    {% if page['More Info'] %}
+      <section class="more-info">
+      {% for info in page['More Info'] %}
+        {% include page_moreinfo.html info=info name=page.name %}
+      {% endfor %}
+      </section>
+    {% endif %}
+  </div>
+
+</article>

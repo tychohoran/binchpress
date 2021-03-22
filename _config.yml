@@ -1,0 +1,70 @@
+---
+title: Binch Press
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  products:
+    title: Products
+    output: true
+  resources:
+    title: Resources
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+    More Info: 
+    Visible on Homepage: true
+- scope:
+    path: ''
+    type: products
+  values:
+    layout: productdetails
+    permalink: "/products/:title/"
+    name: ''
+    price: 0.0
+    sku: ''
+    image: ''
+    weight: 0.0
+email: binchpressllc@gmail.com
+description: Binch Press is a volunteer-run print and ceramics cooperative centering
+  queer/trans artists and artists of color in Central Falls, RI (occupied Pokanoket
+  Wampanoag and Narragansett land).
+Address: '131 Clay St #211, Central Falls, RI 02863'
+baseurl: 
+url: http://binchpress.com
+markdown: kramdown
+snipcart_api_key: NWJkZWQ3MjEtM2I3NC00MjZmLWFhMDctYjQ1ZTVhZDdjMjUyNjM2OTQ0MDc1NDU2MjkzMjAw
+Accent 1 Color: "#0076BF"
+Accent 2 Color: "#FF48B0"
+Accent 3  Color: "#FFE800"
+Accent 4 Color: "#FF967B"
+Text Color: "#000"
+Background Color: "#fff"
+Member Tiers:
+  Drop-In Member:
+    Price: "$10 - 20 / hour"
+    Studio Access: Studio access after reserving online and when an organizing member
+      is present
+    Materials: Bring your own or for sale at the studio
+    Classes: Full price
+    Personal Studio Shelf: 'No'
+    Option to Host Events / Teach Workshops: 'No'
+    Studio Maintenance Task: 'No'
+    Guest Pass: 'No'
+  Monthly Member:
+    Price: "$40 - 80 / month"
+    Studio Access: Unlimited studio access after a month trial period and shop orientation
+    Materials: Bring your own or for sale at the studio
+    Classes: 50% off
+    Personal Studio Shelf: 'Yes'
+    Option to Host Events / Teach Workshops: 'Yes'
+    Studio Maintenance Task: 1 shop maintenance task and 1 member meeting per month
+    Guest Pass: 1 per month

@@ -1,0 +1,98 @@
+---
+---
+
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: "Space Grotesk", Space Grotesk, Arial, sans-serif;
+$base-font-size:   18px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$header-font-family: "Soulcraft", Soulcraft, Arial, sans-serif;
+$header-font-size: 36px;
+
+$spacing-unit:     30px;
+
+$text-color:       {{site['Text Color']}};
+$background-color: {{site['Background Color']}};
+$accent-color-1: {{site['Accent 1 Color']}};
+$accent-color-2: {{site['Accent 2 Color']}};
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+$menu-width: 240px;
+
+$on-palm:          700px;
+$on-laptop:        1040px;
+
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Use @font-facefonts
+@mixin font-face( $font-name, $font-path, // path + file name. Ex : path/to/font/filename
+$font-weight: 400, $font-style: normal) {
+  @font-face {
+    font-family: $font-name;
+    font-style : $font-style;
+    font-weight: $font-weight;
+    src: url('#{$font-path}.woff') format('woff');
+  }
+}
+
+/// Mixin to prefix a property
+/// @author Hugo Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+@mixin value-prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{$property}: #{'-' + $prefix + '-' + $value};
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+//Define fonts
+@include font-face("Soulcraft","../fonts/Soulcraft", 400, normal);
+@include font-face("Space Grotesk","../fonts/SpaceGrotesk-Regular", 400, normal);
+@include font-face("Space Grotesk","../fonts/SpaceGrotesk-Bold", 900, normal);
+@include font-face("BRRR","../fonts/BRRR-Medium", 400, normal);
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;

@@ -1,0 +1,267 @@
+/**
+ * Reset some basic elements
+ */
+body, div, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Snipcart Styling
+ */
+
+snipcart-checkout:hover{
+  color: #3F51B5;
+  text-decoration: underline;
+}
+
+.snipcart-add-item{
+  background-color: #3F51B5;
+  font-size: 18px;
+  color: white;
+  border: 0px;
+  border-radius: 3%;
+}
+
+.snipcart-add-item:hover{
+  box-shadow: 0px 3px 5px #888888;
+}
+
+.snipcart-add-item:active{
+  box-shadow: 0 0 0 0;
+}
+
+.flash-message {
+  font-size: smaller;
+}
+
+.product-description{
+  width: 400px;
+  padding: 25px;
+  margin: 25px;
+  background-color: #CFD8DC;
+  font-size: 20px;
+}
+
+.product-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.products{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+.product:hover{
+  background-color: #CFD8DC;
+}
+
+
+button{
+  font-family: $base-font-family;
+  font-size: 17px;
+}
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    -webkit-font-kerning:normal;
+    font-kerning: normal;
+    text-rendering:optimizeLegibility;
+    -webkit-font-variant-ligatures:common-ligatures;
+    font-variant-ligatures:common-ligatures;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+// h1, h2, h3, h4, h5, h6,
+// p, blockquote, pre,
+// ul, ol, dl, figure,
+// %vertical-rhythm {
+//     margin-bottom: $spacing-unit / 2;
+// }
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $base-font-weight;
+}
+
+iframe {
+  max-width: 100%;
+  width: 100%;
+  max-height: 250px;
+}
+
+/**
+ * Links
+ */
+a {
+    color: $accent-color-2;
+    text-decoration: none;
+
+    &:hover {
+        color: $accent-color-1;
+        text-decoration: underline;
+    }
+}
+
+/**
+ * Tables
+ */
+
+ table {
+
+    border-spacing: 0px;
+    td, th {
+        vertical-align: top;
+        text-align: left;
+        padding: $spacing-unit / 2;
+    }
+
+    td {
+        border-top: solid 2px;
+    }
+ }
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: $grey-color;
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    // max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    // max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    // max-width: 800px;
+    // margin-right: auto;
+    // margin-left: 0;
+    padding-right: (3/2)*$spacing-unit;
+    padding-left: (3/2)*$spacing-unit;
+    @include prefix(transition, 0.25s, webkit moz o);
+    @include media-query($on-laptop){
+        padding-right: $spacing-unit;
+        padding-left: $spacing-unit;
+    }
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
