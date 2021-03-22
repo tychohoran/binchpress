@@ -5,6 +5,7 @@ name: Springtime
 price: 30
 sku: P
 image: "/uploads/IMG_6340.JPG"
+weight: 1lb
 ---
 
 3 Color Risograph Print by MJ Robinson
