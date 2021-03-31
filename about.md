@@ -3,10 +3,7 @@ title: About
 permalink: "/about/"
 position: 0
 More Info:
-  Hours Text: |-
-    **PLEASE NOTE: Due to the pandemic, we are only open to Monthly Members. Monthly members are encouraged to schedule time via scheduler link.**
-
-    By Appointment
+  Hours Text: "**PLEASE NOTE: Due to the pandemic, we are not open for appointments.**"
   Contact Text: |-
     [binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)
     131 Clay St #211 Central Falls, RI 02863
