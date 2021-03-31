@@ -5,8 +5,8 @@ position: 1
 More Info:
   Sign Up Text: 'We are currently not accepting membership as we''re in the process
     of moving! We''ll open up membership again in Summer 2021. '
-  Member Portal Text: After registering as a Drop-In or Monthly member, you can book
-    time in the studio using our [member booking portal](https://binchpress.as.me/schedule.php).
+  Member Portal Text: 'We''re currently not open for scheduling but will re-open after
+    our move (Summer 2021). '
 Member Tiers:
   Drop-In Member:
     Price: "$10 - 20 / hour"
