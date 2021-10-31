@@ -1,7 +1,6 @@
 ---
 title: Membership
 permalink: "/membership/"
-published: false
 position: 1
 More Info:
   Sign Up Text: 'We are currently not accepting membership as we''re in the process
