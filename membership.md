@@ -5,4 +5,4 @@ position: 1
 layout: page
 ---
 
-After a year of building and experimenting, we are accepting new studio members! It has taken us much longer and been more challenging than we expected, but we are finally up and running and eager to invite more artists into the studio.
+After this Summer of building our new studio with [Queer.Archive.Work](http://queer.archive.work), we are accepting a new cohort studio members! We are so excited to have more creative people in the studio using the shared equipment and resources. [If you are interested in becoming a studio member the full application is here!](http://tinyurl.com/binchqawapp)
