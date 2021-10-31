@@ -6,7 +6,8 @@ More Info:
   Hours Text: "**PLEASE NOTE: Due to the pandemic, we are not open for appointments.**"
   Contact Text: |-
     [binchpressllc@gmail.com](mailto:binchpressllc@gmail.com)
-    131 Clay St #211 Central Falls, RI 02863
+    400 Harris Ave. Unit F
+    Providence, RI 02909
     {% include google_map.html %}
 layout: page
 ---
